@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Kulsum Shireen",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-mfrc522", "id": "rfid1", "top": -150, "left": 250, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo", "top": -155.6, "left": -230.4, "attrs": {} },
+    { "type": "wokwi-led", "id": "green", "top": 50, "left": -100, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "red", "top": 50, "left": -50, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz", "top": -45.6, "left": -171, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "servo:GND", "black", [ "h0" ] ],
+    [ "esp:5V", "servo:V+", "red", [ "h0" ] ],
+    [ "esp:13", "servo:PWM", "orange", [ "h0" ] ],
+    [ "esp:GND.1", "green:C", "black", [ "h0" ] ],
+    [ "esp:GND.1", "red:C", "black", [ "h0" ] ],
+    [ "esp:GND.1", "buzz:1", "black", [ "h0" ] ],
+    [ "esp:14", "green:A", "green", [ "h0" ] ],
+    [ "esp:27", "red:A", "green", [ "h0" ] ],
+    [ "esp:12", "buzz:2", "green", [ "h0" ] ],
+    [ "esp:5", "rfid1:SDA", "purple", [ "h0" ] ],
+    [ "esp:22", "rfid1:RST", "blue", [ "h0" ] ],
+    [ "esp:GND.2", "rfid1:GND", "black", [ "h0" ] ],
+    [ "esp:3V3", "rfid1:3.3V", "red", [ "h0" ] ],
+    [ "esp:18", "rfid1:SCK", "orange", [ "h0" ] ],
+    [ "esp:19", "rfid1:MISO", "blue", [ "h0" ] ],
+    [ "esp:23", "rfid1:MOSI", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
