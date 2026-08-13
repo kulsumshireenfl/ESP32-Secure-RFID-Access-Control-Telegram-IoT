@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+generatedBy = "ESP-IDF VS Code Extension"
+firmware = "build/DoorLock_RFID.bin"
+elf = "build/DoorLock_RFID.elf"
+
+[wokwi.diagram]
+file = "diagram.json"
